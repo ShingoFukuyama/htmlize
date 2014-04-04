@@ -1429,12 +1429,16 @@ it's called with the same value of KEY.  All other times, the cached
 
 ;;; Default methods.
 
+(defvar htmlize-default-doctype-string
+  "<!DOCTYPE html>"
+  ;;"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\">"
+  )
+
 (defun htmlize-default-doctype ()
   nil           ; no doc-string
   ;; Note that the `font' output is technically invalid under this DTD
   ;; because the DTD doesn't allow embedding <font> in <pre>.
-  "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\">"
-  )
+  htmlize-default-doctype-string)
 
 (defun htmlize-default-body-tag (face-map)
   nil           ; no doc-string
